@@ -34,9 +34,9 @@ H_NAME=`hostname`
 
 set -o pipefail 
 if ! pg_dump -U ${USER} ${DB_NAME} -F p -f ${OUTPUT}; then
-	curl -s -X POST $URL -d chat_id=$ID -d text="Falied to realize postgres backup of "${H_NAME}
+	curl -s -X POST $URL -d chat_id=$ID -d text="Falied to realize PostgreSQL backup of "${H_NAME}
 else
-	curl -s -X POST $URL -d chat_id=$ID -d text="Postgress Backup of ".${H_NAME}" succssesfully done."
+	curl -s -X POST $URL -d chat_id=$ID -d text="PostgreSQL Backup of ".${H_NAME}" succssesfully done."
 fi
  
 # CLEAN BACKUPS 
